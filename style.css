@@ -1,89 +1,326 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;
-    color: white;
-  }
+*,
+*::before,
+*::after{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root{
+  --primary-background: #18181c;
+  --card-background: #383838;
+  --text-color: #ffffff;
+  --button-background: #ff4d4d;
+  --heading-font: jetbrains-mono, monospace, sans-serif;
+  --body-font: source-code-pro, monospace, sans-serif;
+  --spacing-unit: 1rem; /*Default: 1rem = 16px */
+  --heading-text-size: 3rem;
+  --body-text-size: 2rem; /*Default: 1rem = 16px */
+  --info-text-size: 1rem;
+
+}
+/* Global Styles */
+body{
+  font-family: var(--body-font);
+  background-color: var(--primary-background);
+  color: var(--text-color);
+  line-height: 1.6;
+}
   
   a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
   }
   
   button {
-    background-color: #ff4d4d;
-    color: white;
+    background-color: var(--button-background);
+    color: var(--text-color);
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
   
-  /* Header */
-  .header {
-    text-align: center;
-    background: linear-gradient(to bottom, #000, #444);
-    padding: 2rem;
-  }
+  /* Navbar */
   
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    max-width: 1200px;  /* Define a maximum width */
+    margin: 0 auto;     /* Center the navbar horizontally */
+    margin-bottom: calc(var(--spacing-unit) * 2); /* Add some space below the navbar */
+    height: calc(var(--spacing-unit) * 5); /* Set the height of the navbar */
+    padding: 0 1.25rem;
   }
   
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .nav-links li {
-    display: inline;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .cta-btn {
-    margin-top: 1rem;
-  }
-  
-  /* Steps */
-  .steps {
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  
-  .steps h2 {
-    margin-bottom: 1.5rem;
+  .navbar .logo {
     font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer; /* Add cursor pointer for click effect */
+    position: relative; /* For the underline effect */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar .logo:hover {
+  color: var(--button-background); /* Change color on hover */
+}
+
+.navbar .logo::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* Position below the logo text */
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background: #ff4d4d;
+  transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+.navbar .logo:hover::after {
+  width: 100%; /* Extend the underline on hover */
+}
+
+.navbar .logo:active {
+  transform: scale(0.95); /* Slightly shrink the text when clicked */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;                     /* Space between links */
+  margin: 0;
+  padding: 0;
+}
+  
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--info-text-size);
+  position: relative; /* For underline effect */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+  
+/* Hover effect */
+.nav-links a:hover {
+  color: var(--button-background); /* Change color on hover */
+}
+
+.nav-links a:active {
+  transform: scale(0.95); /* Shrink slightly on click */
+}
+
+/* Underline effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--button-background);
+  transition: width 0.3s ease;
+}
+  
+  .nav-links a:hover::after {
+    width: 100%; /* Animate underline on hover */
   }
   
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
+/* Hero section */
+.hero {
+  position: relative;       /* Position the text on top of the image */
+  display: block;     /* Display the section as an inline block */
+  height: 80vh;             /* Set the height for the section */
+  width: 130%;
+  overflow: visible;         /* Ensure the image doesn’t overflow */
+  margin-bottom: calc(var(--spacing-unit) * 10); /* Add some space below the section */
+}
+
+.hero::before {
+  content: ""; /* Create the pseudo-element */
+  position: absolute; /* Position it relative to the container */
+  top: -50;
+  left: 0;
+  width: 100%; /* Match the dimensions of the image */
+  height: 100%;
+  background: radial-gradient(circle, var(--button-background), transparent); /* Create a glowing highlight */
+  z-index: -1; /* Place the highlight behind the image */
+  transform: scale(1); /* Slightly enlarge the highlight effect */
+  filter: blur(30px); /* Create a soft glowing effect */
+}
+
+.hero-image {
+  position: absolute;       /* Position the image absolutely within the .hero container */               /* Align the image to the center horizontally */
+  width: 100%;              /* Make the image wider than the container to cover it */
+  height: 100%;             /* Ensure the image fills the height of the container */
+  object-fit: cover;        /* Ensure the image covers the section */
+  object-position: center;  /* Keep the center of the image in focus */
+}
+
+
+.hero-text {
+  position: absolute;       /* Position the text absolutely */
+  width: calc(var(--spacing-unit) * 50); /* Set a fixed width for the text */
+  top: 50%;                  /* Vertically center the text */
+  left: 10%;                 /* Add some left padding */
+  transform: translateY(-50%); /* Exact vertical centering */
+  color: white;             /* Text color */
+  z-index: 1;               /* Ensure the text is above the image */
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: var(--heading-text-size);             /* Adjust heading size */
+  font-family: var(--heading-font);               /* Change font family */
+  line-height: 1;            /* Adjust spacing between lines */
+  margin-bottom: var(--spacing-unit);         /* Add spacing below the heading */
+}
+
+.hero-text p {
+  font-family: var(--body-font);
+  font-size: var(--body-text-size);           /* Adjust paragraph size */
+  margin-bottom: 1rem;         /* Add spacing below the paragraph */
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: var(--info-text-size);
+  color: white;
+  background-color: var(--button-background);   /* Button color */
+  text-decoration: none;       /* Remove underline */
+  border-radius: 5px;          /* Rounded corners */
+  transition: background-color 0.3s ease; /* Add a hover effect */
+}
+
+.cta-btn:hover {
+  background-color: #e63939;   /* Darken button on hover */
+}
   
+/* Steps Section */
+.steps {
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;  /* Ensure the section takes at least the height of the screen */
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+}
+
+/* Steps heading */
+.steps h2 {
+  font-size: var(--heading-text-size);
+  margin-bottom: 1.5rem;
+  font-family: var(--heading-font);
+}
+
+/* Steps paragraph */
+.steps p {
+  font-family: var(--body-font);
+  font-size: var(--body-text-size);
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet screens (min-width: 768px) */
+@media (min-width: 768px) {
+  .steps {
+    padding: 2rem; /* Adjust padding for medium screens */
+    min-height: 100vh; /* Ensure the section takes the full height */
+  }
+}
+
+/* Larger Screens */
+@media (min-width: 1024px) {
+  .steps {
+    min-height: 100vh; /* Ensure the section takes the full height */
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Card styles */
+.card {
+  background: var(--card-background);
+  padding: var(--spacing-unit);
+  border-radius: 8px;
+  text-align: left;
+  width: 100%; /* By default, cards take full width on smaller screens */
+  max-width: 450px; /* Limit the width of the cards */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+}
+
+.card.selected {
+  box-shadow: 0px 0px 30px var(--button-background); /* Glowing border effect on click */
+}
+
+/* Card icon */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: calc(var(--spacing-unit) * 1);
+  padding: 0.5rem;
+  background-color: var(--button-background);
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Card image */
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  margin-bottom: calc(var(--spacing-unit) * 1);
+}
+
+/* Card heading */
+.card h2 {
+  font-family: var(--heading-font);
+  font-size: var(--heading-text-size);
+  margin-bottom: calc(var(--spacing-unit) * 1);
+}
+
+/* Card paragraph */
+.card p {
+  font-family: var(--body-font);
+  font-size: var(--info-text-size);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+/* Media Queries for responsiveness */
+
+/* Tablet screens (min-width: 768px) */
+@media (min-width: 768px) {
   .card {
-    background: #333;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 45%; /* Cards take 45% of the width on tablet screens */
   }
-  
-  .card img {
-    max-width: 100%;
-    border-radius: 8px;
+}
+
+/* Desktop screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .card {
+    width: 30%; /* Cards take 30% of the width on larger screens */
   }
+}
+
   
   /* Footer */
   footer {
