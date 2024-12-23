@@ -1,3 +1,4 @@
+// Function to keep glowing affect on card once its clicked //
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function() {
       // Remove the 'selected' class from all cards

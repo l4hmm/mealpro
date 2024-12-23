@@ -27,39 +27,39 @@ body{
   line-height: 1.6;
 }
   
-  a {
-    color: var(--text-color);
-    text-decoration: none;
-  }
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
   
-  button {
-    background-color: var(--button-background);
-    color: var(--text-color);
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-  }
+ /* Navbar */
   
-  /* Navbar */
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;  /* Define a maximum width */
-    margin: 0 auto;     /* Center the navbar horizontally */
-    margin-bottom: calc(var(--spacing-unit) * 2); /* Add some space below the navbar */
-    height: calc(var(--spacing-unit) * 5); /* Set the height of the navbar */
-    padding: 0 1.25rem;
-  }
-  
-  .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer; /* Add cursor pointer for click effect */
-    position: relative; /* For the underline effect */
-    transition: color 0.3s ease; /* Smooth color transition */
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;  /* Define a maximum width */
+  margin: 0 auto;     /* Center the navbar horizontally */
+  margin-bottom: calc(var(--spacing-unit) * 2); /* Add some space below the navbar */
+  height: calc(var(--spacing-unit) * 5); /* Set the height of the navbar */
+  padding: 0 1.25rem;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer; /* Add cursor pointer for click effect */
+  position: relative; /* For the underline effect */
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .navbar .logo:hover {
@@ -104,8 +104,7 @@ body{
   position: relative; /* For underline effect */
   transition: color 0.3s ease, transform 0.2s ease;
 }
-  
-/* Hover effect */
+
 .nav-links a:hover {
   color: var(--button-background); /* Change color on hover */
 }
@@ -131,6 +130,7 @@ body{
   }
   
 /* Hero section */
+
 .hero {
   position: relative;       /* Position the text on top of the image */
   display: block;     /* Display the section as an inline block */
@@ -154,13 +154,12 @@ body{
 }
 
 .hero-image {
-  position: absolute;       /* Position the image absolutely within the .hero container */               /* Align the image to the center horizontally */
+  position: absolute;       /* Position the image absolutely within the .hero container */               
   width: 100%;              /* Make the image wider than the container to cover it */
   height: 100%;             /* Ensure the image fills the height of the container */
   object-fit: cover;        /* Ensure the image covers the section */
   object-position: center;  /* Keep the center of the image in focus */
 }
-
 
 .hero-text {
   position: absolute;       /* Position the text absolutely */
@@ -202,6 +201,7 @@ body{
 }
   
 /* Steps Section */
+
 .steps {
   text-align: center;
   padding: 2rem 1rem;
@@ -240,6 +240,7 @@ body{
     min-height: 100vh; /* Ensure the section takes the full height */
   }
 }
+/* Card Section */
 
 .card-container {
   display: flex;
@@ -321,16 +322,16 @@ body{
   }
 }
 
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: #000;
-  }
-  
-  .social-icons img {
-    width: 24px;
-    margin: 0 0.5rem;
-  }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #000;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 0 0.5rem;
+}
   
