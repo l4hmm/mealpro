@@ -1,11 +1,21 @@
-# mealpro
+# MealPro
+
+## Your meal prep idea generator you didn't know you needed.
 
 My code for an website/app idea using HTML, CSS and Jacascript.
 
-Method
+## Method:
 
-1. Create website design using Figma.
-2. Heavy use of ChatGPT to assit in coding, generating ideas and content for website.
-3. Use of javascript to add functionality to website.
-4. Use of python to scrape web for recipes and images.
-5. Use of ... to store data from webscaping.
+- [ ] Create website design using Figma.
+- [ ] Heavy use of ChatGPT to assit in coding, generating ideas and content for website.
+- [ ] Use of javascript to add functionality to website.
+- [ ] Use of python to scrape web for recipes and images.
+- [ ] Use of ... to store data from webscaping.
+
+## ToDo:
+
+- [] Add snap scroll animation from section to section.
+- [] Add API key info from MealDB API.
+- [] Append addition text, icon, buttons to step 4 card.
+- [] Add icon to each selector card.
+- [] Add icons to footer.

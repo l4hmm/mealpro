@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateStep3Visibility = () => {
     if (selectedProtein && selectedCarb) {
       step3Section.style.display = "block"; // Show Step 3
+
+      setTimeout(() => {
+        step3Section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 0);
     } else {
       step3Section.style.display = "none"; // Hide Step 3
       step4Section.style.display = "none"; // Always hide Step 4 if Step 3 is hidden
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         step4Container.removeChild(step4Container.firstChild);
       }
 
-      // Create elements for the selected meal in Step 4
+      // Create elements for the selected meal in Step 4.
       const mealCard = document.createElement("div");
       mealCard.classList.add("card");
 
@@ -108,6 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Show Step 4
       step4Section.style.display = "block";
+
+      // Scroll to Step 4 after rendering
+      setTimeout(() => {
+        step4Section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 0);
     });
   });
 });
