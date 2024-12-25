@@ -14,8 +14,15 @@ My code for an website/app idea using HTML, CSS and Jacascript.
 
 ## ToDo:
 
-- [x] Add snap scroll animation from section to section. (Completed 25-12-2024).
+- [] Style second step 4 card.
+- [] Edit js so original go through step 3 card is no longer highlighted when selected meal 2.
+- [] Add heading to Above step 1 saying "Meal 1" which then updates on second go through to "Meal 2".
+- [] Add Meal 1 and meal 2 sub heading to step 4 cards.
 - [] Add API key info from MealDB API.
-- [] Append addition text, icon, buttons to step 4 card.
-- [] Add icon to each selector card.
 - [] Add icons to footer.
+
+## Completed Tasks:
+
+- [x] Add snap scroll animation from section to section. (Completed 25-12-2024)
+- [x] Append addition text, icon, buttons to step 4 card. (Completed 25-12-2024)
+- [x] Add icon to each selector card. (Completed 25-12-2024)

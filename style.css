@@ -201,6 +201,15 @@ button {
 }
   
 /* Steps Section */
+.mealRef{
+  font-size: var(--heading-text-size);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  font-family: var(--heading-font);
+}
+
+.mealRefSpan{
+  color: var(--button-background);
+}
 
 .steps {
   text-align: center;
