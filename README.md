@@ -14,7 +14,7 @@ My code for an website/app idea using HTML, CSS and Jacascript.
 
 ## ToDo:
 
-- [] Add snap scroll animation from section to section.
+- [x] Add snap scroll animation from section to section. (Completed 25-12-2024).
 - [] Add API key info from MealDB API.
 - [] Append addition text, icon, buttons to step 4 card.
 - [] Add icon to each selector card.

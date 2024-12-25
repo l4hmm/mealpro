@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hide Steps 3 and 4 initially
   step3Section.style.display = "none";
   step4Section.style.display = "none";
+  step4Section.style.display = "none";
 
   // Function to update Step 3 visibility
   const updateStep3Visibility = () => {
@@ -79,44 +80,65 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Handle Step 3: Meal selection
-  step3Cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      // Highlight selected meal
-      step3Cards.forEach((c) => c.classList.remove("selected"));
-      card.classList.add("selected");
+step3Cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    // Highlight selected meal
+    step3Cards.forEach((c) => c.classList.remove("selected"));
+    card.classList.add("selected");
 
-      // Extract meal details
-      const mealImageSrc = card.querySelector("img").src;
-      const mealDescription = card.querySelector("p").textContent;
+    // Extract meal details
+    const mealName = card.querySelector("h2").textContent;
+    const mealImageSrc = card.querySelector("img").src;
+    const mealDescription = card.querySelector("p").textContent;
 
-      // Clear Step 4 container
-      while (step4Container.firstChild) {
-        step4Container.removeChild(step4Container.firstChild);
-      }
+    // Extract and store icon styling (background color or other styles)
+    const iconElement = card.querySelector(".card-icon");
+    selectedIconStyle = getComputedStyle(iconElement).cssText; // Capture all inline styles
+    
+    // Clear Step 4 container
+    while (step4Container.firstChild) {
+      step4Container.removeChild(step4Container.firstChild);
+    }
 
-      // Create elements for the selected meal in Step 4.
-      const mealCard = document.createElement("div");
-      mealCard.classList.add("card");
+    // Create elements for the selected meal in Step 4
+    const mealCard = document.createElement("div");
+    mealCard.classList.add("card");
 
-      const mealImage = document.createElement("img");
-      mealImage.src = mealImageSrc;
-      mealImage.alt = "Selected Meal";
+    // Create a new icon element and apply the styles from the selected protein card
+    const newIconElement = document.createElement("div");
+    newIconElement.classList.add("card-icon");
+    newIconElement.style.cssText = selectedIconStyle; // Apply the stored styles from Step 3 icon
 
-      const mealText = document.createElement("p");
-      mealText.textContent = mealDescription;
+    const mealTitle = document.createElement("h2");
+    mealTitle.textContent = mealName;
 
-      // Append elements to Step 4 container
-      mealCard.appendChild(mealImage);
-      mealCard.appendChild(mealText);
-      step4Container.appendChild(mealCard);
+    const mealImage = document.createElement("img");
+    mealImage.src = mealImageSrc;
+    mealImage.alt = "Selected Meal";
 
-      // Show Step 4
-      step4Section.style.display = "block";
+    const mealText = document.createElement("p");
+    mealText.textContent = mealDescription;
 
-      // Scroll to Step 4 after rendering
-      setTimeout(() => {
-        step4Section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 0);
+    const mealButton = document.createElement("button");
+    mealButton.textContent = "Check out Recipe!";
+    mealButton.classList.add("button");
+
+
+    // Append elements to Step 4 container
+    mealCard.appendChild(newIconElement); // Append the new icon with style
+    mealCard.appendChild(mealTitle); // Add the title
+    mealCard.appendChild(mealImage);
+    mealCard.appendChild(mealText);
+    mealCard.appendChild(mealButton);
+    step4Container.appendChild(mealCard);
+
+    // Show Step 4
+    step4Section.style.display = "block";
+
+    // Ensure the scroll happens after layout update
+    requestAnimationFrame(() => {
+      step4Section.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
+});
 });
