@@ -174,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Remove the 'selected' class from all cards
         step1Cards.forEach((card) => card.classList.remove("selected"));
         step2Cards.forEach((card) => card.classList.remove("selected"));
+        step3Cards.forEach((card) => card.classList.remove("selected"));
 
         // Hide Step 3 and Step 4 sections
         step3Section.style.display = "none";
