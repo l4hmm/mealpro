@@ -3,33 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MealPro</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-      rel="stylesheet"
-    />
+    <title>Meal Pro</title>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
+    <header>
       <nav class="navbar">
-        <div class="logo">MEALPRO</div>
+        <div class="logo">MealPro</div>
         <ul class="nav-links">
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#recipes">Recipes</a></li>
-          <li><a href="#favourites">Favourites</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- Home Section -->
+
     <section class="hero">
       <div class="hero-text">
         <h1>FUEL YOUR BODY, <br />SIMPLIFY YOUR LIFE!</h1>
@@ -37,181 +27,157 @@
           Your goals, your ingredients, <br />
           our recipes.
         </p>
-        <button class="cta-btn" onclick="scrollToNextSection ('section1')">
-          Get Started
-        </button>
+        <button class="cta-btn">Get Started</button>
       </div>
-      <img
-        src="images/anastase-maragos-9dzWZQWZMdE-unsplash.jpg"
-        class="hero-image"
-        alt="Man Deadlifting"
-      />
+      <img src="images/Deadlift.jpg" class="hero-image" alt="Man Deadlifting" />
     </section>
 
-    <!-- Section 1: Select Protein Section -->
-
-    <section class="steps protein" id="section1">
-      <h1 class="mealRef">
-        You are Selecting: <span class="mealRefSpan">Meal 1</span>
-      </h1>
-      <p>Step 1:</p>
-      <h2>Choose Your Source of Protein</h2>
-      <div class="card-container">
-        <div class="card" onclick="scrollToNextSection ('section2')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-
-        <div class="card" onclick="scrollToNextSection ('section2')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-
-        <div class="card" onclick="scrollToNextSection ('section2')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
+    <!-- Step 1: Protein Section -->
+    <section class="protein-section">
+      <!-- Step 1: Protein Section Headings -->
+      <div class="section-heading">
+        <h1 class="mealRef">
+          You are selecting: <span class="mealRefSpan">Meal 1</span>
+        </h1>
+        <p>Step 1</p>
+        <h2>Choose Your Source of Protein:</h2>
       </div>
-    </section>
 
-    <!-- Section 2: Select Carb Section -->
-    <section class="steps carb" id="section2">
-      <p>Step 2:</p>
-      <h2>Choose Your Source of Carbs</h2>
+      <!-- Step 1: Protein Section card container -->
       <div class="card-container">
-        <div class="card" onclick="scrollToNextSection ('section3')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-
-        <div class="card" onclick="scrollToNextSection ('section3')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-
-        <div class="card" onclick="scrollToNextSection ('section3')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Choose Meal Section -->
-    <section class="steps ChosenMeal" id="section3">
-      <p>Step 3:</p>
-      <h2>Choose Your Meal</h2>
-
-      <div class="card-container">
-        <div class="card" onclick="scrollToNextSection ('section4')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-
-        <div class="card" onclick="scrollToNextSection ('section4')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-
-        <div class="card" onclick="scrollToNextSection ('section4')">
-          <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 4: Selected Meal Section -->
-    <section class="steps slectectMeal" id="section4">
-      <p>Step 4:</p>
-      <h2>You Selected</h2>
-      <div class="card-container">
+        <!-- Step 1: Protein Section card 1 -->
         <div class="card">
           <div class="card-icon"></div>
-          <h2>Chicken</h2>
+          <h3>Chicken</h3>
           <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
+          <p>Chicken is a great source of protein.</p>
+          <button class="select-btn">Select Chciken</button>
         </div>
 
+        <!-- Step 1: Protein Section card 2 -->
         <div class="card">
           <div class="card-icon"></div>
-          <h2>Chicken</h2>
-          <img src="images/Chicken.jpg" alt="Chicken" />
-          <p>
-            Chicken is a great protein source, lean, high in protein, and
-            versatile.
-          </p>
-          <button>Select Chicken</button>
+          <h3>Beef</h3>
+          <img src="images/Beef.jpg" alt="Chicken" />
+          <p>Beef is a great source of protein.</p>
+          <button class="select-btn">Select Beef</button>
+        </div>
+
+        <!-- Step 1: Protein Section card 3 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Lamb</h3>
+          <img src="images/Lamb.jpg" alt="Chicken" />
+          <p>Lamb is a great source of protein.</p>
+          <button class="select-btn">Select Lamb</button>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 MealPro. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="#"><img src="icon-twitter.svg" alt="Twitter" /></a>
-        <a href="#"><img src="icon-instagram.svg" alt="Instagram" /></a>
-        <a href="#"><img src="icon-github.svg" alt="GitHub" /></a>
+    <!-- Step 2: Carb Section -->
+    <section class="carb-section">
+      <!-- Step 1: Carb Section Headings -->
+      <div class="section-heading">
+        <p>Step 2</p>
+        <h2>Choose Your Source of Carb:</h2>
       </div>
-    </footer>
 
-    <script src="script.js"></script>
+      <!-- Step 2: Carb Section card container -->
+      <div class="card-container">
+        <!-- Step 2: Carb Section card 2 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Pasta</h3>
+          <img src="images/Pasta.jpg" alt="Pasta" />
+          <p>Pasta is a great source of protein.</p>
+          <button class="select-btn">Select Pasta</button>
+        </div>
+
+        <!-- Step 2: Carb Section card 2 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Rice</h3>
+          <img src="images/Rice.jpg" alt="Rice" />
+          <p>Rice is a great source of protein.</p>
+          <button class="select-btn">Select Rice</button>
+        </div>
+
+        <!-- Step 2: Carb Section card 3 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Potato</h3>
+          <img src="images/Potato.jpg" alt="Potato" />
+          <p>Potato is a great source of protein.</p>
+          <button class="select-btn">Select Potato</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: Recipies Section -->
+    <section class="recipe-section">
+      <!-- Recipe section: Recipies Section Headings -->
+      <div class="section-heading">
+        <p>Step 3</p>
+        <h2>Choose Your Recipe:</h2>
+      </div>
+
+      <!-- Recipe section: Recipe Section card container -->
+      <div class="card-container">
+        <!-- Recipe section: Recipe section card 2 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Recipe 1</h3>
+          <img src="images/Pasta.jpg" alt="Pasta" />
+          <p>Recipe 1 is a great source of protein.</p>
+          <button class="select-btn">Select Recipe 1</button>
+        </div>
+
+        <!-- Recipe section: Recipe section card 2 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Recipe 2</h3>
+          <img src="images/Rice.jpg" alt="Rice" />
+          <p>Recipe 2 is a great source of protein.</p>
+          <button class="select-btn">Select Recipe 2</button>
+        </div>
+
+        <!-- Recipe section: Recipe section card 3 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Recipe 3</h3>
+          <img src="images/Potato.jpg" alt="Potato" />
+          <p>Recipe 3 is a great source of protein.</p>
+          <button class="select-btn">Select Recipe 3</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: Selected Section -->
+    <section class="selected-recipe-section">
+      <!-- Selected recipe section: Selected recipe Section Headings -->
+      <div class="section-heading">
+        <p>Step 4</p>
+        <h2>You Selected:</h2>
+      </div>
+
+      <!-- Selected recipe section: Selected recipe Section card container -->
+      <div class="card-container">
+        <!-- Selected recipe section: Selected recipe section card 2 -->
+        <div class="card">
+          <div class="card-icon"></div>
+          <h3>Recipe 1</h3>
+          <img src="images/Pasta.jpg" alt="Pasta" />
+          <p>Recipe 1 is a great source of protein.</p>
+          <button class="select-btn">View Recipe</button>
+        </div>
+
+        <!-- Selected recipe section: Selected recipe section card 2 -->
+        <div class="selected-recipe-second-card">
+          <button class="select-btn">Select Recipe 2</button>
+        </div>
+      </div>
+    </section>
+
+    <link src="script.js" />
   </body>
 </html>

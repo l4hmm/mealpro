@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 *,
 *::before,
 *::after{
@@ -7,73 +10,77 @@ box-sizing: border-box;
 }
 
 :root{
-  --primary-background: #18181c;
-  --card-background: #383838;
-  --text-color: #ffffff;
-  --button-background: #ff4d4d;
-  --heading-font: jetbrains-mono, monospace, sans-serif;
-  --body-font: source-code-pro, monospace, sans-serif;
+  --primary-background-color: #e9e9e9;
+  --card-background-color: #ffffff;
+  --primary-text-colour: #18181c;
+  --secondary-text-colour: #2b2b2b;
+  --button-colour: #ff4d4d;
+  --heading-font: 'JetBrains Mono', monospace;
+  --body-font: 'Source Code Pro', monospace;
   --spacing-unit: 1rem; /*Default: 1rem = 16px */
-  --heading-text-size: 3rem;
-  --body-text-size: 2rem; /*Default: 1rem = 16px */
-  --info-text-size: 1rem;
+  --heading-text-size: 3rem; /* font-size: 48px */
+  --body-text-size: 2rem; /* font-size: 32px */
+  --info-text-size: 1rem; /* font-size: 16px */
 
 }
-/* Global Styles */
+
+/* Global styles */
 body{
   font-family: var(--body-font);
-  background-color: var(--primary-background);
-  color: var(--text-color);
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-colour);
+  font-size: var(--body-text-size);
   line-height: 1.6;
 }
-  
+
 a {
-  color: var(--text-color);
+  color: var(--button-colour);
   text-decoration: none;
 }
 
 button {
-  background-color: var(--button-background);
+  background-color: var(--button-colour);
   color: var(--text-color);
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 0.25rem;
 }
-  
- /* Navbar */
-  
- .navbar {
+
+/*Navbar styles */
+
+.navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;  /* Define a maximum width */
-  margin: 0 auto;     /* Center the navbar horizontally */
-  margin-bottom: calc(var(--spacing-unit) * 2); /* Add some space below the navbar */
-  height: calc(var(--spacing-unit) * 5); /* Set the height of the navbar */
-  padding: 0 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: calc(var(--spacing-unit) * 2); /* 32px */
+  height: calc(var(--spacing-unit) * 5); /* 64px */
+  padding: 0 2rem;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
+.navbar .logo{
+  color: var(--primary-text-colour);
+  font-size: var(--body-text-size); /* 32px */
   font-weight: bold;
-  cursor: pointer; /* Add cursor pointer for click effect */
-  position: relative; /* For the underline effect */
+  cursor: pointer;
+  position: relative;
   transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .navbar .logo:hover {
-  color: var(--button-background); /* Change color on hover */
+  color: var(--button-colour); /* Change color on hover */
 }
 
 .navbar .logo::after {
   content: '';
   position: absolute;
-  bottom: -1px; /* Position below the logo text */
+  bottom: 0; /* Position below the logo text */
   left: 0;
   width: 0;
-  height: 2px; /* Thickness of the underline */
-  background: #ff4d4d;
+  height: 4px; /* Thickness of the underline */
+  background: var(--button-colour); /* Color of the underline */
   transition: width 0.3s ease; /* Smooth underline animation */
 }
 
@@ -98,7 +105,7 @@ button {
 }
 
 .nav-links a {
-  color: var(--text-color);
+  color: var(--primary-text-colour);
   text-decoration: none;
   font-size: var(--info-text-size);
   position: relative; /* For underline effect */
@@ -106,7 +113,7 @@ button {
 }
 
 .nav-links a:hover {
-  color: var(--button-background); /* Change color on hover */
+  color: var(--button-colour); /* Change color on hover */
 }
 
 .nav-links a:active {
@@ -121,15 +128,13 @@ button {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--button-background);
+  background: var(--button-colour);
   transition: width 0.3s ease;
 }
   
-  .nav-links a:hover::after {
+.nav-links a:hover::after {
     width: 100%; /* Animate underline on hover */
-  }
-  
-/* Hero section */
+}
 
 .hero {
   position: relative;       /* Position the text on top of the image */
@@ -147,9 +152,9 @@ button {
   left: 0;
   width: 100%; /* Match the dimensions of the image */
   height: 100%;
-  background: radial-gradient(circle, var(--button-background), transparent); /* Create a glowing highlight */
+  background: radial-gradient(circle, var(--button-colour), transparent); /* Create a glowing highlight */
   z-index: -1; /* Place the highlight behind the image */
-  transform: scale(1); /* Slightly enlarge the highlight effect */
+  transform: scale(1.1); /* Slightly enlarge the highlight effect */
   filter: blur(30px); /* Create a soft glowing effect */
 }
 
@@ -190,7 +195,7 @@ button {
   padding: 10px 20px;
   font-size: var(--info-text-size);
   color: white;
-  background-color: var(--button-background);   /* Button color */
+  background-color: var(--button-colour);   /* Button color */
   text-decoration: none;       /* Remove underline */
   border-radius: 5px;          /* Rounded corners */
   transition: background-color 0.3s ease; /* Add a hover effect */
@@ -199,8 +204,53 @@ button {
 .cta-btn:hover {
   background-color: #e63939;   /* Darken button on hover */
 }
-  
-/* Steps Section */
+
+/* Protein section styling */
+.protein-section{
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;  /* Ensure the section takes at least the height of the screen */
+}
+
+/* Carb section styling */
+.carb-section{
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;  /* Ensure the section takes at least the height of the screen */
+}
+
+/* Recipe section styling */
+.recipe-section{
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;  /* Ensure the section takes at least the height of the screen */
+}
+
+/* Selected recipe styling */
+.selected-recipe-section{
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  justify-content: center; /* Vertically center the content */
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;  /* Ensure the section takes at least the height of the screen */
+}
+
+.section-heading {
+  font-size: var(--body-text-size);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  font-family: var(--heading-font);
+}
+
 .mealRef{
   font-size: var(--heading-text-size);
   margin-bottom: calc(var(--spacing-unit) * 2);
@@ -208,48 +258,8 @@ button {
 }
 
 .mealRefSpan{
-  color: var(--button-background);
+  color: var(--button-colour);
 }
-
-.steps {
-  text-align: center;
-  padding: 2rem 1rem;
-  min-height: 100vh;  /* Ensure the section takes at least the height of the screen */
-  display: flex;
-  flex-direction: column;  /* Stack items vertically */
-  justify-content: center; /* Vertically center the content */
-}
-
-/* Steps heading */
-.steps h2 {
-  font-size: var(--heading-text-size);
-  margin-bottom: 1.5rem;
-  font-family: var(--heading-font);
-}
-
-/* Steps paragraph */
-.steps p {
-  font-family: var(--body-font);
-  font-size: var(--body-text-size);
-}
-
-/* Media Queries for responsiveness */
-
-/* Tablet screens (min-width: 768px) */
-@media (min-width: 768px) {
-  .steps {
-    padding: 2rem; /* Adjust padding for medium screens */
-    min-height: 100vh; /* Ensure the section takes the full height */
-  }
-}
-
-/* Larger Screens */
-@media (min-width: 1024px) {
-  .steps {
-    min-height: 100vh; /* Ensure the section takes the full height */
-  }
-}
-/* Card Section */
 
 .card-container {
   display: flex;
@@ -260,7 +270,7 @@ button {
 
 /* Card styles */
 .card {
-  background: var(--card-background);
+  background: var(--card-background-color);
   padding: var(--spacing-unit);
   border-radius: 8px;
   text-align: left;
@@ -276,7 +286,7 @@ button {
 }
 
 .card.selected {
-  box-shadow: 0px 0px 30px var(--button-background); /* Glowing border effect on click */
+  box-shadow: 0px 0px 30px var(--button-colour); /* Glowing border effect on click */
 }
 
 /* Card icon */
@@ -289,7 +299,7 @@ button {
   border-radius: 10px;
   margin-bottom: calc(var(--spacing-unit) * 1);
   padding: 0.5rem;
-  background-color: var(--button-background);
+  background-color: var(--button-colour);
   transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
@@ -302,7 +312,7 @@ button {
 }
 
 /* Card heading */
-.card h2 {
+.card h3 {
   font-family: var(--heading-font);
   font-size: var(--heading-text-size);
   margin-bottom: calc(var(--spacing-unit) * 1);
@@ -315,32 +325,49 @@ button {
   margin-bottom: calc(var(--spacing-unit) * 1.5);
 }
 
-/* Media Queries for responsiveness */
-
-/* Tablet screens (min-width: 768px) */
-@media (min-width: 768px) {
-  .card {
-    width: 45%; /* Cards take 45% of the width on tablet screens */
-  }
+.card button {
+  background-color: var(--button-colour);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
-/* Desktop screens (min-width: 1024px) */
-@media (min-width: 1024px) {
-  .card {
-    width: 30%; /* Cards take 30% of the width on larger screens */
-  }
+.card button:hover {
+  background-color: #e63939;   /* Darken button on hover */
 }
 
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #000;
+.selected-recipe-second-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px dashed var(--secondary-text-colour);
+  padding: var(--spacing-unit);
+  border-radius: 8px;
+  text-align: left;
+  width: 100%; /* By default, cards take full width on smaller screens */
+  max-width: 450px; /* Limit the width of the cards */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
 }
 
-.social-icons img {
-  width: 24px;
-  margin: 0 0.5rem;
+.selected-recipe-second-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
 }
-  
+.selected-recipe-second-card button {
+  background-color: var(--button-colour);
+  font-size: var(--info-text-size);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.selected-recipe-second-card button:hover {
+  background-color: #e63939;   /* Darken button on hover */
+}
